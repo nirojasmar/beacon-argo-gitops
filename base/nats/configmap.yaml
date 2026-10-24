@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nats-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+data:
+  nats.conf: |
+    server_name: beacon-nats
+    listen: 0.0.0.0:4222
+    http: 0.0.0.0:8222
+    authorization {
+      users = [
+        { user: "beacon", password: "$NATS_PASSWORD" }
+      ]
+    }
+    jetstream {
+      store_dir: /data/jetstream
+      max_file_store: 1GB
+    }
+

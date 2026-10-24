@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: beacon-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+data:
+  NATS_URL: nats://nats.beacon.svc.cluster.local:4222
+  NATS_USER: beacon
+  BASE_URL: http://beacon-api.beacon.svc.cluster.local
+  HTTP_ADDR: ":8080"
+  METRICS_ADDR: ":9090"
+  LEADER_ELECTION: kubernetes
+  CHECKER_CONCURRENCY: "20"
+  BLOCK_PRIVATE_NETWORKS: "false"
+  INSECURE_SKIP_VERIFY: "false"
+  DISCOVERY_ENABLED: "false"
+  DISCOVERY_NAMESPACES: ""
+  LOG_LEVEL: INFO
+  APP_VERSION: dev
+  GIT_SHA: unknown
+  STARTUP_DELAY_SECONDS: "0"
+  FAULT_CRASH_AFTER_SECONDS: "0"
+  FAULT_LEAK_MB_PER_MINUTE: "0"
+  FAULT_FAIL_READINESS: "false"
+  DNS_SERVER: ""
+
