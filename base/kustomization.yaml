@@ -20,7 +20,6 @@ resources:
 
 labels:
   - pairs:
-      app.kubernetes.io/name: beacon
       app.kubernetes.io/part-of: beacon
-    includeSelectors: true
+    includeSelectors: false
     includeTemplates: true
