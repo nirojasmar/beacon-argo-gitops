@@ -109,8 +109,7 @@ spec:
   egress:
     - to:
         - ipBlock:
-            # Replace with the control-plane node IP/CIDR in overlays/oci/config.env.
-            cidr: 0.0.0.0/0
+            cidr: 10.0.0.0/24
       ports:
         - protocol: TCP
           port: 6443
