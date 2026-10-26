@@ -14,7 +14,7 @@ configMapGenerator:
 images:
   - name: beacon
     newName: ghcr.io/nirojasmar/beacon
-    newTag: git-4fd1cc6
+    newTag: git-8d29843
 
 replacements:
   - source:
